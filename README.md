@@ -1,9 +1,15 @@
+Prerequisities:
+
+1. Download PyCharm IDE/Visual Studio/PyDev - https://www.jetbrains.com/pycharm-edu/download/
+2. Install Python - https://www.python.org/downloads/
+3. Install Selenium - pip install selenium (or) pip install -U selenium
+
 NOTE: To run the test navigate to the features' folder in the terminal
 
-i)  To Run all the Feature files:
+i)  To Run all the Feature files run the following command:
         behave
 
-ii) To Run Single Feature File:
+ii) To Run Single Feature File runt the below following command:
         behave login.feature
 
 iii)To Run a specific Scenario:
