@@ -23,3 +23,10 @@ iii)To Run a specific Scenario:
 Link: https://behave.readthedocs.io/en/latest/behave.html
 
 
+NOTE: While running the scripts if you notice any error like below, run the following command:
+pip install -U selenium
+
+Error: Exception AttributeError: module 'selenium.webdriver' has no attribute 'Chrome'
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/bin/behave", line 11, in <module>
+    sys.exit(main())
