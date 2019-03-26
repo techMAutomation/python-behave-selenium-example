@@ -9,6 +9,7 @@ Feature: Verify that Login Functionality is working fine
     Examples:
     |username|password|
     |hi      |pwd     |
+    |        |        |
 
   Scenario: Test that Registration page is opened correctly
     Given I click on the JoinNow link in the Home page

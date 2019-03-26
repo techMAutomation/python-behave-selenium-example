@@ -1,4 +1,5 @@
-from behave import *
+from behave import given, when, then, use_step_matcher, register_type
+import parse
 
 
 @given(u'I am on the Home page')
@@ -13,15 +14,24 @@ def step_impl(context, link_name):
     elif link_name == 'JoinNow':
         context.login_page.click_join_now_link()
 
+# The below two methods for step_matcher
+@parse.with_pattern(r"\S+")
+def parse_string(text):
+     return text.strip()
 
-@when(u'I enter invalid {username} username')
-def step_impl(context, username):
-    context.login_page.enter_username(username)
+
+register_type(Name=parse_string)
+use_step_matcher("cfparse")
 
 
-@then(u'I enter invalid {password} password')
-def step_impl(context, password):
-    context.login_page.enter_password(password)
+@when(u'I enter invalid {key:Name*} username')
+def step_impl(context, key):
+    context.login_page.enter_username(key)
+
+
+@then(u'I enter invalid {key:Name*} password')
+def step_impl(context, key):
+    context.login_page.enter_password(key)
 
 
 @then(u'I submit login details')
